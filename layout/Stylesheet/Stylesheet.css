@@ -1,0 +1,24 @@
+body {
+    background : url("../Images/M.jpg") no-repeat;
+    font-size: 20px;
+     }
+
+body {
+    margin: 100px 150px 100px 80px;
+
+    padding: 50px 30px 50px 80px;
+     }
+
+
+.center {
+    padding: 70px 0;
+    border: 3px solid green;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+
+
