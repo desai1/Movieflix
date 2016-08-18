@@ -1,0 +1,57 @@
+<div>
+    <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#/Home">Home</a></li>
+            <li><a href="#/Movies">Movies</a></li>
+            <li><a href="#/Series">Series</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#/"> Log Out </a></li>
+
+        </ul>
+    </div>
+</nav>
+
+<div class="row" ng-controller="SeriesDetailController as srsVm">
+    <div class="col-sm-6">
+        <h1>Series Detail</h1>
+        <br>
+        <p><strong>Title</strong>:{{srsVm.series.title}}</p>
+        <p><strong>Year</strong>:{{srsVm.series.year}}</p>
+        <p><strong>Rated</strong>:{{srsVm.series.rated}}</p>
+        <p><strong>Released</strong>:{{srsVm.series.released}}</p>
+        <p><strong>Runtime</strong>:{{srsVm.series.runtime}}</p>
+        <p><strong>Genre</strong>:{{srsVm.series.genre}}</p>
+        <p><strong>Director</strong>:{{srsVm.series.director}}</p>
+        <p><strong>Writer</strong>:{{srsVm.series.writer}}</p>
+        <p><strong>Actor</strong>:{{srsVm.series.actor}}</p>
+        <p><strong>Plot</strong>:{{srsVm.series.plot}}</p>
+        <p><strong>Language</strong>:{{srsVm.series.language}}</p>
+        <p><strong>Country</strong>:{{srsVm.series.country}}</p>
+        <p><strong>Awards</strong>: {{srsVm.series.awards}}</p>
+        <p><strong>Metascore</strong>: {{srsVm.series.metascore}}</p>
+        <p><strong>imdbRating</strong>: {{srsVm.series.imdbRating}}</p>
+        <p><strong>imdbVotes</strong>: {{srsVm.series.imdbVotes}}</p>
+        <p><strong>imdbID</strong>: {{srsVm.series.imdbID}}</p>
+        <p><strong>Comment</strong>: {{srsVm.series.comment}}</p>
+        <br>
+        <fieldset class="rating">
+            <legend> Please rate: </legend>
+            <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Rocks!">5 stars</label>
+            <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
+            <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh">3 stars</label>
+            <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
+            <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
+        </fieldset>
+            <br> <br>
+    </div>
+    <div class="col-sm-6">
+        <img class="img-responsive" ng-src="{{srsVm.series.poster}}">
+    </div>
+</div>
+
+</div>
+
+

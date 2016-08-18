@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title> MovieFlix </title>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="Styles/Stylesheet.css">
+
+
+</head>
+<body>
+
+<div >
+    <ng-view> </ng-view>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src="https://code.angularjs.org/1.5.8/angular-messages.min.js"></script>
+<script src="https://code.angularjs.org/1.5.8/angular-route.min.js"></script>
+<script src="app.module.js"></script>
+<script src="Home/Home.Controller.js"></script>
+<script src="Login/Login.Controller.js"></script>
+<script src="Login/LoginService.js"></script>
+<script src="Signup/Signup.Controller.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="Movies/Movie.Controller.js"></script>
+<script src="Movies/movieService.js"></script>
+<script src="Movies/MovieDetailController.js"></script>
+<script src="Series/Series.Controller.js"></script>
+<script src="Series/seriesService.js"></script>
+<script src="Series/SeriesDetailController.js"></script>
+<script src="Movies/CommentController.js"></script>
+</body>
+</html>
