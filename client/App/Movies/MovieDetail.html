@@ -1,0 +1,58 @@
+<div>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#/Home">Home</a></li>
+            <li><a href="#/Movies">Movies</a></li>
+            <li><a href="#/Series">Series</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#/login"> Log Out </a></li>
+
+        </ul>
+    </div>
+</nav>
+
+    <div class="row" ng-controller="MovieDetailController as selfVm">
+    <div class="col-sm-6">
+        <h1>Movie Detail</h1>
+        <br>
+        <p><strong>Title</strong>       :  {{selfVm.movie.title}}</p>
+        <p><strong>Year</strong>        :  {{selfVm.movie.year}}</p>
+        <p><strong>Rated</strong>       :  {{selfVm.movie.rated}}</p>
+        <p><strong>Released</strong>    :  {{selfVm.movie.released}}</p>
+        <p><strong>Runtime</strong>     :  {{selfVm.movie.runtime}}</p>
+        <p><strong>Genre</strong>       :  {{selfVm.movie.genre}}</p>
+        <p><strong>Director</strong>    :  {{selfVm.movie.director}}</p>
+        <p><strong>Writer</strong>      :  {{selfVm.movie.writer}}</p>
+        <p><strong>Actor</strong>       :  {{selfVm.movie.actor}}</p>
+        <p><strong>Plot</strong>        :  {{selfVm.movie.plot}}</p>
+        <p><strong>Language</strong>    :  {{selfVm.movie.language}}</p>
+        <p><strong>Country</strong>     :  {{selfVm.movie.country}}</p>
+        <p><strong>Awards</strong>      :  {{selfVm.movie.awards}}</p>
+        <p><strong>Metascore</strong>   :  {{selfVm.movie.metascore}}</p>
+        <p><strong>imdbRating</strong>  :  {{selfVm.movie.imdbRating}}</p>
+        <p><strong>imdbVotes</strong>   :  {{selfVm.movie.imdbVotes}}</p>
+        <p><strong>imdbID</strong>      :  {{selfVm.movie.imdbID}}</p>
+        <p><strong>Comment</strong>     :  {{selfVm.movie.comment}}</p>
+        <br>
+        <fieldset class="rating">
+            <legend> Please rate: </legend>
+            <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Rocks!">5 stars</label>
+            <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
+            <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh">3 stars</label>
+            <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
+            <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
+        </fieldset>
+        <br> <br>
+        <input type="text" class="form-control" ng-model ="Vm.my.comment" placeholder="Enter a Comment"><br>
+        <p> <button type="button" ng-click="Vm.initialize()">Submit</button> </p>
+    </div>
+        <div class="col-sm-6">
+            <img class="img-responsive" ng-src="{{selfVm.movie.poster}}">
+        </div>
+    </div>
+    <br>
+</div>

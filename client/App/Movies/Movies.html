@@ -1,0 +1,77 @@
+<div ng-controller = "MovieController as mainVm">
+
+    <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#/Home">Home</a></li>
+            <li><a href="#/Movies">Movies</a></li>
+            <li><a href="#/Series">Series</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#/"> Log Out </a></li>
+
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <div class="jumbotron">
+        <h2><strong> Catalog of Movies </strong></h2>
+    </div>
+    </div>
+<br><br>
+
+<div class="container">
+    <h2><strong>  Search Movies </strong></h2>
+    <br>
+</div>
+
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li ><a  href="#/Movies" ng-click="mainVm.sorter.sortBy='year'; mainVm.sorter.sortOrder = !mainVm.sorter.sortOrder;"> <strong> Year </strong> </a> </li>
+                <li ><a  href="#/Movies" ng-click="mainVm.sorter.sortBy='imdbRating'; mainVm.sorter.sortOrder = !mainVm.sorter.sortOrder;"> <strong> IMDB Rating </strong> </a> </li>
+                <li ><a  href="#/Movies" ng-click="mainVm.sorter.sortBy='imdbVotes'; mainVm.sorter.sortOrder = !mainVm.sorter.sortOrder;"> <strong> IMDB Votes </strong> </a> </li>
+
+            </ul>
+            <div class="pull-right">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <strong> <input type="text" class="form-control" placeholder=" Sort By Genre.." ng-model="mainVm.searchText.genre" name="q"> </strong>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <br><br><br>
+
+<div class="container">
+                 <div class="col-xs-12">
+                 <ul class="media-list">
+                 <li class="media" ng-repeat="mv in mainVm.movie | filter:mainVm.searchText | orderBy:mainVm.sorter.sortBy: mainVm.sorter.sortOrder">
+                 <div class="media-left media-middle">
+                 <a ng-href="#/MovieDetail/{{mv.id}}">
+                 <img class="media-object img-thumbnail" src="{{mv.poster}}" height="500" width="500">
+      </a>
+            <br> <br>
+      </div>
+                 <div class="media-body">
+                     <strong class="h3"> Title: </strong><h3 class="media-heading">{{mv.title}}</strong></h3> <br>
+                    <strong class="h3"> Genre: </strong><h3 class="media-heading ">{{mv.genre}}</h3> <br>
+                     <strong class="h3"> Year: </strong><h3 class="media-heading ">{{mv.year}}</h3> <br>
+                     <strong class="h3"> ImdbRating: </strong><h3 class="media-heading ">{{mv.imdbRating}}</h3> <br>
+                     <strong class="h3"> ImdbVotes: </strong><h3 class="media-heading ">{{mv.imdbVotes}}</h3> <br>
+                     <strong class="h3"> Runtime: </strong><h3 class="media-heading ">{{mv.runtime}}</h3> <br>
+                     <strong class="h3"> <a href="https://www.imdb.com/title/{{mv.imdbID}}" > IMDB Page</a> : </strong> </h3> <br> <br>
+                     <strong class="h3"> Comment: </strong><h3 class="media-heading ">{{mv.comment}}</h3> <br>
+                     <hr>
+
+      </div>
+      </li>
+      </ul>
+      </div>
+      </div>
+
+</div>

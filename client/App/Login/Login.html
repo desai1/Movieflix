@@ -1,0 +1,33 @@
+<div>
+
+<h1><strong> WELCOME TO MOVIEFLIX </strong></h1>
+
+<br>
+
+<div class="container-fluid">
+
+<form class="form-horizontal" ng-controller="LoginController as LoginVm">
+
+    <div class="form-group">
+        <label for="inputEmail" class="col-sm-2 control-label"><Strong>Email :</Strong> <span class="glyphicon glyphicon-envelope"></span></label>
+        <div class="col-sm-3">
+            <input type="email" class="form-control" id="inputEmail" ng-model="LoginVm.emailaddress" placeholder="Enter your Email Address" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputPassword" class="col-sm-2 control-label"><Strong>Password :</Strong></label>
+        <div class="col-sm-3">
+            <input type="password" class="form-control" id="inputPassword" ng-model="LoginVm.pwd" placeholder="Enter your Password" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+              <button type="button" class="btn btn-default" ng-click="LoginVm.login()"> Log in</button>
+              <button type="button" class="btn btn-default"> <a href="#/signup">Sign up </a></button>
+        </div>
+    </div>
+</form>
+</div>
+</div>
+
+

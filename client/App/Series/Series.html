@@ -1,0 +1,79 @@
+<div ng-controller = "SeriesController as myVm">
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#/Home">Home</a></li>
+            <li><a href="#/Movies">Movies</a></li>
+            <li><a href="#/Series">Series</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#/"> Log Out </a></li>
+
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="jumbotron">
+
+        <h2><strong> Catalog of Series </strong></h2>
+
+    </div>
+</div>
+<br><br>
+
+<div class="container">
+    <h2><strong>  Search Series </strong></h2>
+    <br>
+</div>
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+                <ul class="nav navbar-nav ">
+                    <li><a href="#/Series" ng-click="myVm.Sorter.sortBy='year'; myVm.Sorter.sortOrder = !myVm.Sorter.sortOrder;">Year</a></li>
+                    <li><a href="#/Series" ng-click="myVm.Sorter.sortBy='imdbRating'; myVm.Sorter.sortOrder = !myVm.Sorter.sortOrder;">IMDB Rating</a></li>
+                    <li><a href="#/Series" ng-click="myVm.Sorter.sortBy='imdbVotes'; myVm.Sorter.sortOrder = !myVm.Sorter.sortOrder;">IMDB Votes</a></li>
+                 </ul>
+        <div class="pull-right">
+            <form class="navbar-form" role="search">
+                <div class="input-group">
+                    <strong> <input type="text" class="form-control" placeholder="Sort By Genre" ng-model="myVm.searchText.genre" name="q"> </strong>
+                </div>
+                </form>
+                </div>
+                </div>
+                </nav>
+
+<br><br><br>
+
+                <div class="container">
+          <div class="col-xs-12">
+
+        <ul class="media-list">
+
+            <li class="media" ng-repeat="sc in myVm.series | filter:myVm.searchText | orderBy:myVm.Sorter.sortBy: myVm.Sorter.sortOrder">
+                <div class="media-left media-middle">
+                    <a ng-href="#/SeriesDetail/{{sc.id}}">
+                        <img class="media-object img-thumbnail" src="{{sc.poster}}" height="500" width="500">
+                    </a>
+                    <br><br>
+                </div>
+                <div class="media-body">
+                    <strong class="h3"> Title: </strong><h3 class="media-heading">{{sc.title}}</h3> <br>
+                    <strong class="h3"> Genre: </strong><h3 class="media-heading ">{{sc.genre}}</h3><br>
+                    <strong class="h3"> Year: </strong><h3 class="media-heading ">{{sc.year}}</h3><br>
+                    <strong class="h3"> ImdbRating: </strong><h3 class="media-heading ">{{sc.imdbRating}}</h3><br>
+                    <strong class="h3"> ImdbVotes: </strong><h3 class="media-heading ">{{sc.imdbVotes}}</h3><br>
+                    <strong class="h3"> Runtime: </strong><h3 class="media-heading ">{{sc.runtime}}</h3><br>
+                    <strong class="h3"> <a href="https://www.imdb.com/title/{{sc.imdbID}}" > IMDB Page</a> : </strong> </h3> <br> <br>
+                    <strong class="h3"> Comment: </strong><h3 class="media-heading ">{{sc.comment}}</h3><br>
+                    <hr>
+                </div>
+            </li>
+        </ul>
+        </div>
+        </div>
+
+</div>
