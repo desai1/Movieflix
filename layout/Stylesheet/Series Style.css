@@ -1,0 +1,25 @@
+h2
+{
+    text-align: center;
+}
+
+.jumbotron {
+    margin: auto;
+    padding: 70px 30px;
+    background-color: blueviolet;
+    color: floralwhite;
+}
+
+.dropdown
+{
+    position: relative;
+}
+
+body
+{
+    background-color: gainsboro;
+}
+
+input{
+    width: 50px;
+}
